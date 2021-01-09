@@ -110,3 +110,25 @@ client.on("message", message => {
     message.channel.send(help);
   }
 });
+
+.setColor("GREEN")
+.setThumbnail(guild.iconURL)
+.addField(`Sunucu İsmi`,guild.name)
+.addField(`Sunucu ID`, guild.id)
+.addField(`Üye Sayısı`,guild.memberCount)
+client.channels.get("791168083880443944").send(onurakdikan)
+
+});
+client.on("guildDelete", guild => {  
+const onurakdikan = new Discord.RichEmbed()
+
+.setTitle(`Sunucudan çıkarıldım`)
+.setTimestamp()
+.setColor("GREEN")
+.setThumbnail(guild.iconURL)
+.addField(`Sunucu İsmi`,guild.name)
+.addField(`Sunucu ID`, guild.id)
+.addField(`Üye Sayısı`,guild.memberCount)
+client.channels.catcheget("791168083880443944").send(onurakdikan)
+
+});
