@@ -61,7 +61,7 @@ const help = new discord.MessageEmbed()
 .setFooter("KHAOS")
 .setColor("RED")
 .setThumbnail('https://i.imgur.com/4M7IWwP.gif')
-.setDescription(`Selamlar, botunu uptime etmeye hazırmısın? \n artık kolay bir şekilde botunu 7/24 aktif edebilirsin! \n\n🤹 uptime olmak için \`!ekle [show linki]\` yazabilirsin \n🎭 Uptime ettiğin botlarımı görmek istiyorsun \`!göster\` `)
+.setDescription(`Selamlar, botunu uptime etmeye hazırmısın? \n artık kolay bir şekilde botunu 7/24 aktif edebilirsin! \n\n🤹 uptime olmak için \`!ekle [show linki]\` yazabilirsin \n🎭 Uptime ettiğin botlarımı görmek istiyorsun \`!göster\` [SİTEMİZ İÇİN TIKLA](https://khaos-bot-site.glitch.me/) `)
 
 
 
@@ -111,24 +111,28 @@ client.on("message", message => {
   }
 });
 
+client.on("guildCreate", guild => {  
+const onurakdikan = new discord.MessageEmbed()
+
+.setTitle(`Sunucuya Eklendim`)
+.setTimestamp()
 .setColor("GREEN")
-.setThumbnail(guild.iconURL)
+.setThumbnail(guild.iconURL())
 .addField(`Sunucu İsmi`,guild.name)
 .addField(`Sunucu ID`, guild.id)
 .addField(`Üye Sayısı`,guild.memberCount)
-client.channels.get("791168083880443944").send(onurakdikan)
+client.channels.cache.get("791168083880443944").send(onurakdikan)
 
 });
 client.on("guildDelete", guild => {  
-const onurakdikan = new Discord.RichEmbed()
+const onurakdikan = new discord.MessageEmbed()
 
 .setTitle(`Sunucudan çıkarıldım`)
 .setTimestamp()
 .setColor("GREEN")
-.setThumbnail(guild.iconURL)
+.setThumbnail(guild.iconURL())
 .addField(`Sunucu İsmi`,guild.name)
 .addField(`Sunucu ID`, guild.id)
 .addField(`Üye Sayısı`,guild.memberCount)
-client.channels.catcheget("791168083880443944").send(onurakdikan)
-
+client.channels.cache.get("791168083880443944").send(onurakdikan)
 });
