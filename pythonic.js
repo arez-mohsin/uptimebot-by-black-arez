@@ -1,7 +1,7 @@
 const db = require("quick.db");
 const discord = require("discord.js");
 const client = new discord.Client({ disableEveryone: true });
-client.login("NzgwNzc0NzMwMDQ2NTA0OTYz.X7z_IQ.lKfeDPDEjDpAlGAbdwFrs-9ZxYg");
+client.login("Nzk3NDM2MTA3ODg0NTkzMTUy.X_mcPw.xuuvfl1FV2szngUfVm0A7GngETY");
 const fetch = require("node-fetch");
 const fs = require("fs");
 require("express")().listen(1343);
@@ -28,7 +28,7 @@ client.on("ready", () => {
 
   client.user.setPresence({
     activity: {
-      name: "PLASMICİ",
+      name: "khaos",
       type: "WATCHING",
       url: "URL"
     }
@@ -58,10 +58,10 @@ client.on("ready", () => {
 //embed hazırlıkları
 
 const help = new discord.MessageEmbed()
-.setFooter("plasmic uptime yardımcısı")
+.setFooter("KHAOS")
 .setColor("RED")
 .setThumbnail('https://i.imgur.com/4M7IWwP.gif')
-.setDescription(`Selamlar, botunu uptime etmeye hazırmısın? \n artık kolay bir şekilde botunu 7/24 aktif edebilirsin! \n\n🤹 uptime olmak için \`!ekle [glitch linki]\` yazabilirsin \n🎭 Uptime ettiğin botlarımı görmek istiyorsun \`!göster\` `)
+.setDescription(`Selamlar, botunu uptime etmeye hazırmısın? \n artık kolay bir şekilde botunu 7/24 aktif edebilirsin! \n\n🤹 uptime olmak için \`!ekle [show linki]\` yazabilirsin \n🎭 Uptime ettiğin botlarımı görmek istiyorsun \`!göster\` `)
 
 
 
@@ -83,12 +83,12 @@ client.on("message", message => {
             .map(z => z.url)
             .includes(link)
         )
-             return message.channel.send(new discord.MessageEmbed().setFooter("Plasmic-uptime").setColor("RED").setDescription("Projeniz Sistemimizde Zaten Var"));
-        message.channel.send(new discord.MessageEmbed().setFooter("Plasmic-uptime").setColor("RED").setDescription("Projeniz Sistemimize Başarıyla Eklendi."));
+             return message.channel.send(new discord.MessageEmbed().setFooter("Khaos").setColor("RED").setDescription("Projeniz Sistemimizde Zaten Var"));
+        message.channel.send(new discord.MessageEmbed().setFooter("Khaos").setColor("RED").setDescription("Projeniz Sistemimize Başarıyla Eklendi."));
         db.push("linkler", { url: link, owner: message.author.id });
       })
       .catch(e => {
-        return message.channel.send(new discord.MessageEmbed().setFooter("Plasmic-uptime").setColor("RED").setDescription("Lütfen Bir Link Giriniz"));
+        return message.channel.send(new discord.MessageEmbed().setFooter("Khaos").setColor("RED").setDescription("Lütfen Bir Link Giriniz"));
       });
   }
 });
@@ -98,7 +98,7 @@ client.on("message", message => {
   var spl = message.content.split(" ");
   if (spl[0] == "!göster") {
     var link = spl[1];
-    message.channel.send(new discord.MessageEmbed().setFooter("Plasmic-uptime").setColor("RED").setDescription(`${db.get("linkler").length} Proje Aktif Tutuluyor!`));
+    message.channel.send(new discord.MessageEmbed().setFooter("Khaos").setColor("RED").setDescription(`${db.get("linkler").length} Proje Aktif Tutuluyor!`));
   }
 });
 
