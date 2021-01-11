@@ -1,7 +1,7 @@
 const db = require("quick.db");
 const discord = require("discord.js");
 const client = new discord.Client({ disableEveryone: true });
-client.login("Nzk3NDM2MTA3ODg0NTkzMTUy.X_mcPw.xuuvfl1FV2szngUfVm0A7GngETY");
+client.login("NzkzNTAyNDc1OTczNTU4MzMy.X-tMxA.XDA5BlgAsb-NCEcLOsYmLsQETp4");
 const fetch = require("node-fetch");
 const fs = require("fs");
 require("express")().listen(1343);
@@ -28,7 +28,7 @@ client.on("ready", () => {
 
   client.user.setPresence({
     activity: {
-      name: "khaos",
+      name: "Murat",
       type: "WATCHING",
       url: "URL"
     }
@@ -58,11 +58,11 @@ client.on("ready", () => {
 //embed hazırlıkları
 
 const help = new discord.MessageEmbed()
-  .setFooter("KHAOS")
+  .setFooter("murat")
   .setColor("RED")
   .setThumbnail("https://i.imgur.com/4M7IWwP.gif")
   .setDescription(
-    `Selamla \n\n🤹 uptime olmak için \`!ekle [show linki]\` yazabilirsin \n🎭 Uptime ettiğin botlarımı görmek istiyorsun \`!göster\` [SİTEMİZ İÇİN TIKLA](https://khaos-bot-site.glitch.me/) `
+    `Selamla \n\n🤹 uptime olmak için \`!ekle [show linki]\` yazabilirsin \n🎭 Uptime ettiğin botlarımı görmek istiyorsun \`!göster\` [SİTEMİZ İÇİN TIKLA](https://maysbott.wixsite.com/website) `
   );
 
 client.on("message", message => {
@@ -80,13 +80,13 @@ client.on("message", message => {
         )
           return message.channel.send(
             new discord.MessageEmbed()
-              .setFooter("Khaos")
+              .setFooter("Murat")
               .setColor("RED")
               .setDescription("Projeniz Sistemimizde Zaten Var")
           );
         message.channel.send(
           new discord.MessageEmbed()
-            .setFooter("Khaos")
+            .setFooter("Murat")
             .setColor("RED")
             .setDescription("Projeniz Sistemimize Başarıyla Eklendi.")
         );
@@ -95,7 +95,7 @@ client.on("message", message => {
       .catch(e => {
         return message.channel.send(
           new discord.MessageEmbed()
-            .setFooter("Khaos")
+            .setFooter("Murat")
             .setColor("RED")
             .setDescription("Lütfen Bir Link Giriniz")
         );
@@ -110,7 +110,7 @@ client.on("message", message => {
     var link = spl[1];
     message.channel.send(
       new discord.MessageEmbed()
-        .setFooter("Khaos")
+        .setFooter("murat")
         .setColor("RED")
         .setDescription(`${db.get("linkler").length} Proje Aktif Tutuluyor!`)
     );
@@ -127,7 +127,7 @@ client.on("message", message => {
 });
 
 client.on("guildCreate", guild => {
-  const onurakdikan = new discord.MessageEmbed()
+  const murat = new discord.MessageEmbed()
 
     .setTitle(`Sunucuya Eklendim`)
     .setTimestamp()
@@ -136,10 +136,10 @@ client.on("guildCreate", guild => {
     .addField(`Sunucu İsmi`, guild.name)
     .addField(`Sunucu ID`, guild.id)
     .addField(`Üye Sayısı`, guild.memberCount);
-  client.channels.cache.get("791168083880443944").send(onurakdikan);
+  client.channels.cache.get("791168083880443944").send(murat);
 });
 client.on("guildDelete", guild => {
-  const onurakdikan = new discord.MessageEmbed()
+  const murat = new discord.MessageEmbed()
 
     .setTitle(`Sunucudan çıkarıldım`)
     .setTimestamp()
@@ -148,5 +148,5 @@ client.on("guildDelete", guild => {
     .addField(`Sunucu İsmi`, guild.name)
     .addField(`Sunucu ID`, guild.id)
     .addField(`Üye Sayısı`, guild.memberCount);
-  client.channels.cache.get("791168083880443944").send(onurakdikan);
+  client.channels.cache.get("791168083880443944").send(murat);
 });
