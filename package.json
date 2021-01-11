@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "node pythonic.js"
+    "start": "node murat-eren.js"
   },
   "dependencies": {
     "express": "^4.17.1",

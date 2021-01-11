@@ -58,17 +58,12 @@ client.on("ready", () => {
 //embed hazırlıkları
 
 const help = new discord.MessageEmbed()
-.setFooter("KHAOS")
-.setColor("RED")
-.setThumbnail('https://i.imgur.com/4M7IWwP.gif')
-.setDescription(`Selamlar, botunu uptime etmeye hazırmısın? \n artık kolay bir şekilde botunu 7/24 aktif edebilirsin! \n\n🤹 uptime olmak için \`!ekle [show linki]\` yazabilirsin \n🎭 Uptime ettiğin botlarımı görmek istiyorsun \`!göster\` [SİTEMİZ İÇİN TIKLA](https://khaos-bot-site.glitch.me/) `)
-
-
-
-
-
-
-
+  .setFooter("KHAOS")
+  .setColor("RED")
+  .setThumbnail("https://i.imgur.com/4M7IWwP.gif")
+  .setDescription(
+    `Selamla \n\n🤹 uptime olmak için \`!ekle [show linki]\` yazabilirsin \n🎭 Uptime ettiğin botlarımı görmek istiyorsun \`!göster\` [SİTEMİZ İÇİN TIKLA](https://khaos-bot-site.glitch.me/) `
+  );
 
 client.on("message", message => {
   if (message.author.bot) return;
@@ -83,12 +78,27 @@ client.on("message", message => {
             .map(z => z.url)
             .includes(link)
         )
-             return message.channel.send(new discord.MessageEmbed().setFooter("Khaos").setColor("RED").setDescription("Projeniz Sistemimizde Zaten Var"));
-        message.channel.send(new discord.MessageEmbed().setFooter("Khaos").setColor("RED").setDescription("Projeniz Sistemimize Başarıyla Eklendi."));
+          return message.channel.send(
+            new discord.MessageEmbed()
+              .setFooter("Khaos")
+              .setColor("RED")
+              .setDescription("Projeniz Sistemimizde Zaten Var")
+          );
+        message.channel.send(
+          new discord.MessageEmbed()
+            .setFooter("Khaos")
+            .setColor("RED")
+            .setDescription("Projeniz Sistemimize Başarıyla Eklendi.")
+        );
         db.push("linkler", { url: link, owner: message.author.id });
       })
       .catch(e => {
-        return message.channel.send(new discord.MessageEmbed().setFooter("Khaos").setColor("RED").setDescription("Lütfen Bir Link Giriniz"));
+        return message.channel.send(
+          new discord.MessageEmbed()
+            .setFooter("Khaos")
+            .setColor("RED")
+            .setDescription("Lütfen Bir Link Giriniz")
+        );
       });
   }
 });
@@ -98,7 +108,12 @@ client.on("message", message => {
   var spl = message.content.split(" ");
   if (spl[0] == "!göster") {
     var link = spl[1];
-    message.channel.send(new discord.MessageEmbed().setFooter("Khaos").setColor("RED").setDescription(`${db.get("linkler").length} Proje Aktif Tutuluyor!`));
+    message.channel.send(
+      new discord.MessageEmbed()
+        .setFooter("Khaos")
+        .setColor("RED")
+        .setDescription(`${db.get("linkler").length} Proje Aktif Tutuluyor!`)
+    );
   }
 });
 
@@ -111,28 +126,27 @@ client.on("message", message => {
   }
 });
 
-client.on("guildCreate", guild => {  
-const onurakdikan = new discord.MessageEmbed()
+client.on("guildCreate", guild => {
+  const onurakdikan = new discord.MessageEmbed()
 
-.setTitle(`Sunucuya Eklendim`)
-.setTimestamp()
-.setColor("GREEN")
-.setThumbnail(guild.iconURL())
-.addField(`Sunucu İsmi`,guild.name)
-.addField(`Sunucu ID`, guild.id)
-.addField(`Üye Sayısı`,guild.memberCount)
-client.channels.cache.get("791168083880443944").send(onurakdikan)
-
+    .setTitle(`Sunucuya Eklendim`)
+    .setTimestamp()
+    .setColor("GREEN")
+    .setThumbnail(guild.iconURL())
+    .addField(`Sunucu İsmi`, guild.name)
+    .addField(`Sunucu ID`, guild.id)
+    .addField(`Üye Sayısı`, guild.memberCount);
+  client.channels.cache.get("791168083880443944").send(onurakdikan);
 });
-client.on("guildDelete", guild => {  
-const onurakdikan = new discord.MessageEmbed()
+client.on("guildDelete", guild => {
+  const onurakdikan = new discord.MessageEmbed()
 
-.setTitle(`Sunucudan çıkarıldım`)
-.setTimestamp()
-.setColor("GREEN")
-.setThumbnail(guild.iconURL())
-.addField(`Sunucu İsmi`,guild.name)
-.addField(`Sunucu ID`, guild.id)
-.addField(`Üye Sayısı`,guild.memberCount)
-client.channels.cache.get("791168083880443944").send(onurakdikan)
+    .setTitle(`Sunucudan çıkarıldım`)
+    .setTimestamp()
+    .setColor("GREEN")
+    .setThumbnail(guild.iconURL())
+    .addField(`Sunucu İsmi`, guild.name)
+    .addField(`Sunucu ID`, guild.id)
+    .addField(`Üye Sayısı`, guild.memberCount);
+  client.channels.cache.get("791168083880443944").send(onurakdikan);
 });
