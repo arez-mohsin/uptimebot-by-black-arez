@@ -1,7 +1,7 @@
 const db = require("quick.db");
 const discord = require("discord.js");
 const client = new discord.Client({ disableEveryone: true });
-client.login("TOKEN");
+client.login("ODA3MjU5MDAxNTkwOTA2ODgw.YB1YiA.MYUz75OI5fVE571Ca-3o-I0XeCo");
 const fetch = require("node-fetch");
 const fs = require("fs");
 require("express")().listen(1343);
@@ -28,7 +28,7 @@ client.on("ready", () => {
 
   client.user.setPresence({
     activity: {
-      name: "Murat",
+      name: "uptime",
       type: "WATCHING",
       url: "URL"
     }
