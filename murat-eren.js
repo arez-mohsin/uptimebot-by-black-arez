@@ -1,7 +1,7 @@
 const db = require("quick.db");
 const discord = require("discord.js");
 const client = new discord.Client({ disableEveryone: true });
-client.login("ODA3MjU5MDAxNTkwOTA2ODgw.YB1YiA.MYUz75OI5fVE571Ca-3o-I0XeCo");
+client.login(process.env.token);
 const fetch = require("node-fetch");
 const fs = require("fs");
 require("express")().listen(1343);
@@ -58,11 +58,11 @@ client.on("ready", () => {
 //embed hazırlıkları
 
 const help = new discord.MessageEmbed()
-  .setFooter("murat")
+  .setFooter("Tranix Uptime")
   .setColor("RED")
   .setThumbnail("https://i.imgur.com/4M7IWwP.gif")
   .setDescription(
-    `Selamla \n\n🤹 uptime olmak için \`!ekle [show linki]\` yazabilirsin \n🎭 Uptime ettiğin botlarımı görmek istiyorsun \`!göster\` [SİTEMİZ İÇİN TIKLA](https://maysbott.wixsite.com/website) `
+    `Selamla \n\n🤹 uptime olmak için \`!ekle [show linki]\` yazabilirsin \n🎭 Uptime ettiğin botlarımı görmek istiyorsun \`!göster\` `
   );
 
 client.on("message", message => {
@@ -80,13 +80,13 @@ client.on("message", message => {
         )
           return message.channel.send(
             new discord.MessageEmbed()
-              .setFooter("Murat")
+              .setFooter("Tranix uptime")
               .setColor("RED")
               .setDescription("Projeniz Sistemimizde Zaten Var")
           );
         message.channel.send(
           new discord.MessageEmbed()
-            .setFooter("Murat")
+            .setFooter("Tranix uptime")
             .setColor("RED")
             .setDescription("Projeniz Sistemimize Başarıyla Eklendi.")
         );
@@ -95,7 +95,7 @@ client.on("message", message => {
       .catch(e => {
         return message.channel.send(
           new discord.MessageEmbed()
-            .setFooter("Murat")
+            .setFooter("Tranix uptime")
             .setColor("RED")
             .setDescription("Lütfen Bir Link Giriniz")
         );
@@ -110,7 +110,7 @@ client.on("message", message => {
     var link = spl[1];
     message.channel.send(
       new discord.MessageEmbed()
-        .setFooter("murat")
+        .setFooter("Tranix uptime")
         .setColor("RED")
         .setDescription(`${db.get("linkler").length} Proje Aktif Tutuluyor!`)
     );
