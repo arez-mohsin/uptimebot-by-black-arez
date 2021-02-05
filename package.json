@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "node murat-eren.js"
+    "start": "node bot.js"
   },
   "dependencies": {
     "express": "^4.17.1",

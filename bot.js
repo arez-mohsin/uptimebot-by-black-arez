@@ -22,18 +22,18 @@ setInterval(() => {
 
 //OYNUYOR KISMI
 
-client.on("ready", () => {
-  console.log("Bot Aktif");
-  let playing = client.voice.connections.size;
 
-  client.user.setPresence({
-    activity: {
-      name: "uptime",
-      type: "WATCHING",
-      url: "URL"
-    }
-  });
-});
+
+module.exports = client => {
+  console.log(`[BOT] | Botun destekçileri ve komutları başarıyla yüklendi, işlemler tamamlandı !`);
+  console.log(`[BOT] | (${client.user.username}) HAZIR KAPTAN  !
+  ‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒`);
+  client.user.setStatus("online");
+  client.user.setActivity("t!yardım 🔥 t!davet 🔥t!website🔥", { type: "PLAYİNG"}); //// TYPE - WATCHING , AYING , LISTENING gibi değiştirilebilir.
+  console.log(`bot başarıyla aktif`);
+
+};
+
 
 setInterval(() => {
   var links = db.get("linkler");
@@ -62,7 +62,7 @@ const help = new discord.MessageEmbed()
   .setColor("RED")
   .setThumbnail("https://i.imgur.com/4M7IWwP.gif")
   .setDescription(
-    `Selamla \n\n🤹 uptime olmak için \`!ekle [show linki]\` yazabilirsin \n🎭 Uptime ettiğin botlarımı görmek istiyorsun \`!göster\` `
+    `Selam \n\n🕑 Uptime olmak için \`!ekle [show linki]\` yazabilirsin \n🔒 Uptime ettiğin botlarımı görmek istiyorsun \`!göster\` `
   );
 
 client.on("message", message => {
