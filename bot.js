@@ -22,18 +22,18 @@ setInterval(() => {
 
 //OYNUYOR KISMI
 
+client.on("ready", () => {
+  console.log("Bot Aktif");
+  let playing = client.voice.connections.size;
 
-
-module.exports = client => {
-  console.log(`[BOT] | Botun destekçileri ve komutları başarıyla yüklendi, işlemler tamamlandı !`);
-  console.log(`[BOT] | (${client.user.username}) HAZIR KAPTAN  !
-  ‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒`);
-  client.user.setStatus("online");
-  client.user.setActivity("t!yardım 🔥 t!davet 🔥t!website🔥", { type: "PLAYİNG"}); //// TYPE - WATCHING , AYING , LISTENING gibi değiştirilebilir.
-  console.log(`bot başarıyla aktif`);
-
-};
-
+  client.user.setPresence({
+    activity: {
+      name: "uptime",
+      type: "WATCHING",
+      url: "URL"
+    }
+  });
+});
 
 setInterval(() => {
   var links = db.get("linkler");
