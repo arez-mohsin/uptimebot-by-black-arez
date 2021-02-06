@@ -82,13 +82,13 @@ client.on("message", message => {
             new discord.MessageEmbed()
               .setFooter("Tranix uptime")
               .setColor("RED")
-              .setDescription("Projeniz Sistemimizde Zaten Var")
+              .setDescription("✔️ Projeniz Sistemimizde Zaten Var")
           );
         message.channel.send(
           new discord.MessageEmbed()
             .setFooter("Tranix uptime")
             .setColor("RED")
-            .setDescription("✔️ Projeniz Sistemimize Başarıyla Eklendi.")
+            .setDescription("Projeniz Sistemimize Başarıyla Eklendi.")
         );
         db.push("linkler", { url: link, owner: message.author.id });
       })
