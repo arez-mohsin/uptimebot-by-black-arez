@@ -62,7 +62,7 @@ const help = new discord.MessageEmbed()
   .setColor("RED")
   .setThumbnail("https://i.imgur.com/4M7IWwP.gif")
   .setDescription(
-    `Selam \n\n🕑 Uptime olmak için \`!ekle [show linki]\` yazabilirsin \n🔒 Uptime ettiğin botlarımı görmek istiyorsun \`!göster\` `
+    `Selam Bot glitch sitelerinin 7/24 açık kalmasını sağlayan bir sistem içerir. Sistemdeki bağlantılar bakım gerektirmeden 7/24 çalışır. \n\n🕑 Uptime etmek için \`!ekle [show linki]\` yazabilirsin \n🔒 Uptime edilen botlarımı görmek istiyorsun \`!göster\` `
   );
 
 client.on("message", message => {
@@ -88,7 +88,7 @@ client.on("message", message => {
           new discord.MessageEmbed()
             .setFooter("Tranix uptime")
             .setColor("RED")
-            .setDescription("Projeniz Sistemimize Başarıyla Eklendi.")
+            .setDescription("✔️ Projeniz Sistemimize Başarıyla Eklendi.")
         );
         db.push("linkler", { url: link, owner: message.author.id });
       })
