@@ -22,19 +22,10 @@ setInterval(() => {
 
 //OYNUYOR KISMI
 
-client.on("ready", () => {
-  console.log("Bot Aktif");
-  let playing = client.voice.connections.size;
-
-  client.user.setPresence({
-    activity: {
-      name: "uptime",
-      type: "WATCHING",
-      url: "URL"
-    }
-  });
-});
-
+client.on('ready', () => {
+client.user.setActivity(`!yardım | 26 Proje`, { type: 'PLAYİNG' })
+//client.user.setStatus('dnd')
+})
 setInterval(() => {
   var links = db.get("linkler");
   if (!links) return;
