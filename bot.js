@@ -26,6 +26,8 @@ client.on('ready', () => {
 client.user.setActivity(`!yardım | 26 Proje`, { type: 'PLAYİNG' })
 //client.user.setStatus('dnd')
 })
+
+
 setInterval(() => {
   var links = db.get("linkler");
   if (!links) return;
