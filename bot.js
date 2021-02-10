@@ -120,7 +120,7 @@ client.on("message", message => {
 });
 
 client.on("guildCreate", guild => {
-  const murat = new discord.MessageEmbed()
+  const tranix = new discord.MessageEmbed()
 
     .setTitle(`Sunucuya Eklendim`)
     .setTimestamp()
@@ -129,10 +129,10 @@ client.on("guildCreate", guild => {
     .addField(`Sunucu İsmi`, guild.name)
     .addField(`Sunucu ID`, guild.id)
     .addField(`Üye Sayısı`, guild.memberCount);
-  client.channels.cache.get("798123697659445290").send(murat);
+  client.channels.cache.get("798123697659445290").send(tranix);
 });
 client.on("guildDelete", guild => {
-  const murat = new discord.MessageEmbed()
+  const tranix = new discord.MessageEmbed()
 
     .setTitle(`Sunucudan çıkarıldım`)
     .setTimestamp()
@@ -141,5 +141,5 @@ client.on("guildDelete", guild => {
     .addField(`Sunucu İsmi`, guild.name)
     .addField(`Sunucu ID`, guild.id)
     .addField(`Üye Sayısı`, guild.memberCount);
-  client.channels.cache.get("798123697659445290").send(murat);
+  client.channels.cache.get("798123697659445290").send(tranix);
 });
