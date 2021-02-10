@@ -55,13 +55,13 @@ const help = new discord.MessageEmbed()
   .setColor("RED")
   .setThumbnail("https://i.imgur.com/4M7IWwP.gif")
   .setDescription(
-    `Selam Bot glitch sitelerinin 7/24 açık kalmasını sağlayan bir sistem içerir. Sistemdeki bağlantılar bakım gerektirmeden 7/24 çalışır. \n\n🕑 Uptime etmek için \`!ekle [show linki]\` yazabilirsin \n🔒 Uptime edilen botlarımı görmek istiyorsun \`!göster\` `
+    `Selam Bot glitch sitelerinin 7/24 açık kalmasını sağlayan bir sistem içerir. Sistemdeki bağlantılar bakım gerektirmeden 7/24 çalışır. \n\n🕑 Uptime etmek için \`t!ekle [show linki]\` yazabilirsin \n🔒 Uptime edilen botlarımı görmek istiyorsun \`t!göster\` `
   );
 
 client.on("message", message => {
   if (message.author.bot) return;
   var spl = message.content.split(" ");
-  if (spl[0] == "!ekle") {
+  if (spl[0] == "t!ekle") {
     var link = spl[1];
     fetch(link)
       .then(() => {
@@ -99,7 +99,7 @@ client.on("message", message => {
 client.on("message", message => {
   if (message.author.bot) return;
   var spl = message.content.split(" ");
-  if (spl[0] == "!göster") {
+  if (spl[0] == "t!göster") {
     var link = spl[1];
     message.channel.send(
       new discord.MessageEmbed()
@@ -113,7 +113,7 @@ client.on("message", message => {
 client.on("message", message => {
   if (message.author.bot) return;
   var spl = message.content.split(" ");
-  if (spl[0] == "!yardım") {
+  if (spl[0] == "t!yardım") {
     var link = spl[1];
     message.channel.send(help);
   }
@@ -129,7 +129,7 @@ client.on("guildCreate", guild => {
     .addField(`Sunucu İsmi`, guild.name)
     .addField(`Sunucu ID`, guild.id)
     .addField(`Üye Sayısı`, guild.memberCount);
-  client.channels.cache.get("791168083880443944").send(murat);
+  client.channels.cache.get("798123697659445290").send(murat);
 });
 client.on("guildDelete", guild => {
   const murat = new discord.MessageEmbed()
@@ -141,5 +141,5 @@ client.on("guildDelete", guild => {
     .addField(`Sunucu İsmi`, guild.name)
     .addField(`Sunucu ID`, guild.id)
     .addField(`Üye Sayısı`, guild.memberCount);
-  client.channels.cache.get("791168083880443944").send(murat);
+  client.channels.cache.get("798123697659445290").send(murat);
 });
