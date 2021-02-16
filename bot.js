@@ -22,7 +22,8 @@ setInterval(() => {
 
 //OYNUYOR KISMI
 
-client.on('ready', () => {
+client.on("ready", () => {
+console.log("Bot hazır")  
 client.user.setActivity(`!yardım | 26 Proje`, { type: 'PLAYİNG' })
 client.user.setStatus('idle')
 })
