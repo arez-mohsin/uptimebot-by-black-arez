@@ -24,7 +24,7 @@ setInterval(() => {
 
 client.on('ready', () => {
 client.user.setActivity(`!yardım | 26 Proje`, { type: 'PLAYİNG' })
-client.user.setStatus('dnd')
+client.user.setStatus('idle')
 })
 
 
