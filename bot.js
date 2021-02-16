@@ -23,7 +23,10 @@ setInterval(() => {
 //OYNUYOR KISMI
 
 client.on("ready", () => {
-
+console.log("Bot hazır")  
+client.user.setActivity(`!yardım | 26 Proje`, { type: 'PLAYİNG' })
+client.user.setStatus('online')
+})
 
 
 setInterval(() => {
@@ -50,7 +53,7 @@ client.on("ready", () => {
 
 const help = new discord.MessageEmbed()
   .setFooter("Tranix Uptime")
-  .setColor("RED")
+  .setColor("#40e82a")
   .setThumbnail("https://i.imgur.com/4M7IWwP.gif")
   .setDescription(
     `Selam Bot glitch sitelerinin 7/24 açık kalmasını sağlayan bir sistem içerir. Sistemdeki bağlantılar bakım gerektirmeden 7/24 çalışır. \n\n🕑 Uptime etmek için \`t!ekle [show linki]\` yazabilirsin \n🔒 Uptime edilen botlarımı görmek istiyorsun \`t!göster\` `
@@ -72,13 +75,13 @@ client.on("message", message => {
           return message.channel.send(
             new discord.MessageEmbed()
               .setFooter("Tranix uptime")
-              .setColor("RED")
+              .setColor("#40e82a")
               .setDescription("❌ Projeniz Sistemimizde Zaten Var")
           );
         message.channel.send(
           new discord.MessageEmbed()
             .setFooter("Tranix uptime")
-            .setColor("RED")
+            .setColor("#40e82a")
             .setDescription("✅ Projeniz Sistemimize Başarıyla Eklendi.")
         );
         db.push("linkler", { url: link, owner: message.author.id });
@@ -87,7 +90,7 @@ client.on("message", message => {
         return message.channel.send(
           new discord.MessageEmbed()
             .setFooter("Tranix uptime")
-            .setColor("RED")
+            .setColor("#40e82a")
             .setDescription("Lütfen Bir Link Giriniz")
         );
       });
@@ -102,7 +105,7 @@ client.on("message", message => {
     message.channel.send(
       new discord.MessageEmbed()
         .setFooter("Tranix uptime")
-        .setColor("RED")
+        .setColor("#40e82a")
         .setDescription(`${db.get("linkler").length} Proje Aktif Tutuluyor!`)
     );
   }
