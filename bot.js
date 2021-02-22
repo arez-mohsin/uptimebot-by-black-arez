@@ -23,9 +23,10 @@ setInterval(() => {
 //OYNUYOR KISMI
 
 client.on("ready", () => {
-console.log("Bot hazır")  
-client.user.setActivity(`!yardım | 26 Proje`, { type: 'PLAYİNG' })
-client.user.setStatus('online')
+  console.log(`Bütün komutlar başarıyla yüklendi!`);
+  client.user.setStatus("idle");
+  client.user.setActivity(`t!ekle || 35 proje`); //botun oynuyor kısmı
+  console.log(`Bot AKTİF! Şu an ` + client.channels.size + ` adet kanala, ` + client.guilds.size + ` adet sunucuya ve ` + client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` kullanıcıya hizmet veriliyor!`);
 })
 
 
