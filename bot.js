@@ -25,7 +25,7 @@ setInterval(() => {
 client.on("ready", () => {
   console.log(`Bütün komutlar başarıyla yüklendi!`);
   client.user.setStatus("online");
-  client.user.setActivity(`t!yardım || 36 proje`); //botun oynuyor kısmı
+  client.user.setActivity(`t!yardım || 37 proje`); //botun oynuyor kısmı
   console.log(`Bot AKTİF! Şu an ` + client.channels.size + ` adet kanala, ` + client.guilds.size + ` adet sunucuya ve ` + client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` kullanıcıya hizmet veriliyor!`);
 })
 
@@ -59,7 +59,7 @@ const help = new discord.MessageEmbed()
   .setDescription(
     `Selam Bot glitch sitelerinin 7/24 açık kalmasını sağlayan bir sistem içerir. Sistemdeki bağlantılar bakım gerektirmeden 7/24 çalışır. \n\n🕑 Uptime etmek için \`t!ekle [show linki]\` yazabilirsin \n🔒 Uptime edilen botlarımı görmek istiyorsun \`t!say\` `
   );
-
+ 
 client.on("message", message => {
   if (message.author.bot) return;
   var spl = message.content.split(" ");
@@ -77,7 +77,7 @@ client.on("message", message => {
             new discord.MessageEmbed()
               .setFooter("Tranix uptime")
               .setColor("#40e82a")
-              .setDescription("❌ Projeniz Zaten 7/24")
+              .setDescription("❌ Projeniz Zaten 7/24 Aktif")
           );
         message.channel.send(
           new discord.MessageEmbed()
