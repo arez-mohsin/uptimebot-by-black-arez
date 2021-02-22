@@ -24,8 +24,8 @@ setInterval(() => {
 
 client.on("ready", () => {
   console.log(`Bütün komutlar başarıyla yüklendi!`);
-  client.user.setStatus("idle");
-  client.user.setActivity(`t!yardım || 35 proje`); //botun oynuyor kısmı
+  client.user.setStatus("online");
+  client.user.setActivity(`t!yardım || 36 proje`); //botun oynuyor kısmı
   console.log(`Bot AKTİF! Şu an ` + client.channels.size + ` adet kanala, ` + client.guilds.size + ` adet sunucuya ve ` + client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` kullanıcıya hizmet veriliyor!`);
 })
 
@@ -57,7 +57,7 @@ const help = new discord.MessageEmbed()
   .setColor("#40e82a")
   .setThumbnail("https://i.imgur.com/4M7IWwP.gif")
   .setDescription(
-    `Selam Bot glitch sitelerinin 7/24 açık kalmasını sağlayan bir sistem içerir. Sistemdeki bağlantılar bakım gerektirmeden 7/24 çalışır. \n\n🕑 Uptime etmek için \`t!ekle [show linki]\` yazabilirsin \n🔒 Uptime edilen botlarımı görmek istiyorsun \`t!göster\` `
+    `Selam Bot glitch sitelerinin 7/24 açık kalmasını sağlayan bir sistem içerir. Sistemdeki bağlantılar bakım gerektirmeden 7/24 çalışır. \n\n🕑 Uptime etmek için \`t!ekle [show linki]\` yazabilirsin \n🔒 Uptime edilen botlarımı görmek istiyorsun \`t!say\` `
   );
 
 client.on("message", message => {
@@ -77,13 +77,13 @@ client.on("message", message => {
             new discord.MessageEmbed()
               .setFooter("Tranix uptime")
               .setColor("#40e82a")
-              .setDescription("❌ Projeniz Sistemimizde Zaten Var")
+              .setDescription("❌ Projeniz Zaten 7/24")
           );
         message.channel.send(
           new discord.MessageEmbed()
             .setFooter("Tranix uptime")
             .setColor("#40e82a")
-            .setDescription("✅ Projeniz Sistemimize Başarıyla Eklendi.")
+            .setDescription("✅ Projeniz Başarıyla 7/24 Oldu.")
         );
         db.push("linkler", { url: link, owner: message.author.id });
       })
@@ -101,7 +101,7 @@ client.on("message", message => {
 client.on("message", message => {
   if (message.author.bot) return;
   var spl = message.content.split(" ");
-  if (spl[0] == "t!göster") {
+  if (spl[0] == "t!say") {
     var link = spl[1];
     message.channel.send(
       new discord.MessageEmbed()
