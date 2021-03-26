@@ -25,7 +25,7 @@ setInterval(() => {
 client.on("ready", () => {
   console.log(`Bütün komutlar başarıyla yüklendi!`);
   client.user.setStatus("online");
-  client.user.setActivity(`t!yardım || 123 proje`); //botun oynuyor kısmı
+  client.user.setActivity(`t!yardım || 125 proje`); //botun oynuyor kısmı
   console.log(`Bot AKTİF! Şu an ` + client.channels.size + ` adet kanala, ` + client.guilds.size + ` adet sunucuya ve ` + client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` kullanıcıya hizmet veriliyor!`);
 })
 
