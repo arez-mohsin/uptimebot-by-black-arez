@@ -59,6 +59,8 @@ const help = new discord.MessageEmbed()
   .setDescription(
     `Selam Bot glitch sitelerinin 7/24 açık kalmasını sağlayan bir sistem içerir. Sistemdeki bağlantılar bakım gerektirmeden 7/24 çalışır. \n\n🕑 Uptime etmek için \`t!ekle [show linki]\` yazabilirsin \n🔒 Uptime edilen botlarımı görmek istiyorsun \`t!say\` `
   );
+
+
  
 client.on("message", message => {
   if (message.author.bot) return;
