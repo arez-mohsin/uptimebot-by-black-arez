@@ -25,7 +25,7 @@ setInterval(() => {
 client.on("ready", () => {
   console.log(`Bütün komutlar başarıyla yüklendi!`);
   client.user.setStatus("online");
-  client.user.setActivity(`t!yardım || 133 proje`); //botun oynuyor kısmı
+  client.user.setActivity(`!yardım| 133 proje`); //botun oynuyor kısmı
   console.log(`Bot AKTİF! Şu an ` + client.channels.size + ` adet kanala, ` + client.guilds.size + ` adet sunucuya ve ` + client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` kullanıcıya hizmet veriliyor!`);
 })
 
@@ -53,11 +53,11 @@ client.on("ready", () => {
 //embed hazırlıkları
 
 const help = new discord.MessageEmbed()
-  .setFooter("Tranix Uptime")
+  .setFooter("CodMars Uptime")
   .setColor("#40e82a")
   .setThumbnail("https://i.imgur.com/4M7IWwP.gif")
   .setDescription(
-    `Selam Bot glitch sitelerinin 7/24 açık kalmasını sağlayan bir sistem içerir. Sistemdeki bağlantılar bakım gerektirmeden 7/24 çalışır. \n\n🕑 Uptime etmek için \`t!ekle [show linki]\` yazabilirsin \n🔒 Uptime edilen botlarımı görmek istiyorsun \`t!say\` `
+    `Selam Bot glitch sitelerinin 7/24 açık kalmasını sağlayan bir sistem içerir.Not:Botunuzun 7/24 aktif olması için ilk botunuzun aktif olması lazım. Sistemdeki bağlantılar bakım gerektirmeden 7/24 çalışır. \n\n🕑 Uptime etmek için \`t!ekle [show linki]\` yazabilirsin \n🔒 Uptime edilen botlarımı görmek istiyorsun \`!say\` `
   );
 
 
@@ -77,13 +77,13 @@ client.on("message", message => {
         )
           return message.channel.send(
             new discord.MessageEmbed()
-              .setFooter("Tranix uptime")
+              .setFooter("CodMars uptime")
               .setColor("#40e82a")
-              .setDescription("❌ Projeniz Zaten 7/24 Aktif")
+              .setDescription("❌ Projeniz Zaten 7/24 Aktif Tutulmakta ")
           );
         message.channel.send(
           new discord.MessageEmbed()
-            .setFooter("Tranix uptime")
+            .setFooter("codmars uptime")
             .setColor("#40e82a")
             .setDescription("✅ Projeniz Başarıyla 7/24 Oldu.")
         );
@@ -92,7 +92,7 @@ client.on("message", message => {
       .catch(e => {
         return message.channel.send(
           new discord.MessageEmbed()
-            .setFooter("Tranix uptime")
+            .setFooter("CodMars uptime")
             .setColor("#40e82a")
             .setDescription("Lütfen Bir Link Giriniz")
         );
@@ -105,11 +105,11 @@ client.on("message", message => {
 client.on("message", message => {
   if (message.author.bot) return;
   var spl = message.content.split(" ");
-  if (spl[0] == "t!say") {
+  if (spl[0] == "!say") {
     var link = spl[1];
     message.channel.send(
       new discord.MessageEmbed()
-        .setFooter("Tranix uptime")
+        .setFooter("CodMars uptime")
         .setColor("#40e82a")
         .setDescription(`${db.get("linkler").length} Proje Aktif Tutuluyor!`)
     );
@@ -125,27 +125,3 @@ client.on("message", message => {
   }
 });
 
-client.on("guildCreate", guild => {
-  const tranix = new discord.MessageEmbed()
-
-    .setTitle(`Sunucuya Eklendim`)
-    .setTimestamp()
-    .setColor("GREEN")
-    .setThumbnail(guild.iconURL())
-    .addField(`Sunucu İsmi`, guild.name)
-    .addField(`Sunucu ID`, guild.id)
-    .addField(`Üye Sayısı`, guild.memberCount);
-  client.channels.cache.get("798123697659445290").send(tranix);
-});
-client.on("guildDelete", guild => {
-  const tranix = new discord.MessageEmbed()
-
-    .setTitle(`Sunucudan çıkarıldım`)
-    .setTimestamp()
-    .setColor("GREEN")
-    .setThumbnail(guild.iconURL())
-    .addField(`Sunucu İsmi`, guild.name)
-    .addField(`Sunucu ID`, guild.id)
-    .addField(`Üye Sayısı`, guild.memberCount);
-  client.channels.cache.get("798123697659445290").send(tranix);
-});
