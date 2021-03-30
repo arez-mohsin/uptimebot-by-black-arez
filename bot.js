@@ -25,7 +25,7 @@ setInterval(() => {
 client.on("ready", () => {
   console.log(`Bütün komutlar başarıyla yüklendi!`);
   client.user.setStatus("online");
-  client.user.setActivity(`!yardım| 133 proje`); //botun oynuyor kısmı
+  client.user.setActivity(`!yardım|CodMars Uptime`); //botun oynuyor kısmı
   console.log(`Bot AKTİF! Şu an ` + client.channels.size + ` adet kanala, ` + client.guilds.size + ` adet sunucuya ve ` + client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` kullanıcıya hizmet veriliyor!`);
 })
 
@@ -57,7 +57,7 @@ const help = new discord.MessageEmbed()
   .setColor("#40e82a")
   .setThumbnail("https://i.imgur.com/4M7IWwP.gif")
   .setDescription(
-    `Selam Bot glitch sitelerinin 7/24 açık kalmasını sağlayan bir sistem içerir.Not:Botunuzun 7/24 aktif olması için ilk botunuzun aktif olması lazım. Sistemdeki bağlantılar bakım gerektirmeden 7/24 çalışır. \n\n🕑 Uptime etmek için \`t!ekle [show linki]\` yazabilirsin \n🔒 Uptime edilen botlarımı görmek istiyorsun \`!say\` `
+    `Selam Bot glitch sitelerinin 7/24 açık kalmasını sağlayan bir sistem içerir.Not:Botunuzun 7/24 aktif olması için ilk botunuzun aktif olması lazım. Sistemdeki bağlantılar bakım gerektirmeden 7/24 çalışır. \n\n🕑 Uptime etmek için \`!ekle [show linki]\` yazabilirsin \n🔒 Uptime edilen botlarımı görmek istiyorsun \`!say\` `
   );
 
 
@@ -65,7 +65,7 @@ const help = new discord.MessageEmbed()
 client.on("message", message => {
   if (message.author.bot) return;
   var spl = message.content.split(" ");
-  if (spl[0] == "t!ekle") {
+  if (spl[0] == "!ekle") {
     var link = spl[1];
     fetch(link)
       .then(() => {
@@ -94,7 +94,7 @@ client.on("message", message => {
           new discord.MessageEmbed()
             .setFooter("CodMars uptime")
             .setColor("#40e82a")
-            .setDescription("Lütfen Bir Link Giriniz")
+            .setDescription("**❌ Lütfen Bir Link Giriniz**")
         );
       });
   }
@@ -119,7 +119,7 @@ client.on("message", message => {
 client.on("message", message => {
   if (message.author.bot) return;
   var spl = message.content.split(" ");
-  if (spl[0] == "t!yardım") {
+  if (spl[0] == "!yardım") {
     var link = spl[1];
     message.channel.send(help);
   }
