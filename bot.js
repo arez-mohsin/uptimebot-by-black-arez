@@ -1,13 +1,15 @@
+
+
 const db = require("quick.db");
 const discord = require("discord.js");
 const client = new discord.Client({ disableEveryone: true });
-client.login(process.env.token);
+client.login("");
+const prefix = "!";
 const fetch = require("node-fetch");
 const fs = require("fs");
 require("express")().listen(1343);
-
-//UPTİME
-
+///by bj and arez 😎
+///by bj and arez 😎
 const express = require("express");
 const app = express();
 const http = require("http");
@@ -19,17 +21,17 @@ app.listen(process.env.PORT);
 setInterval(() => {
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
 }, 280000);
-
-//OYNUYOR KISMI
-
+///by bj and arez 😎
+///by bj and arez 😎
+///by bj and arez 😎
 client.on("ready", () => {
-  console.log(`Bütün komutlar başarıyla yüklendi!`);
+  console.log(`zhonn by bj and arez 😎❤`);
   client.user.setStatus("online");
-  client.user.setActivity(`!yardım|CodMars Uptime`); //botun oynuyor kısmı
-  console.log(`Bot AKTİF! Şu an ` + client.channels.size + ` adet kanala, ` + client.guilds.size + ` adet sunucuya ve ` + client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` kullanıcıya hizmet veriliyor!`);
+  client.user.setActivity(`${prefix}add`); //botun oynuyor kısmı
+  console.log(`status addedd`);
 })
-
-
+///by bj and arez 😎
+///by bj and arez 😎
 setInterval(() => {
   var links = db.get("linkler");
   if (!links) return;
@@ -43,29 +45,29 @@ setInterval(() => {
   });
   console.log("Pinglendi.");
 }, 60000);
-
+///by bj and arez 😎
 client.on("ready", () => {
   if (!Array.isArray(db.get("linkler"))) {
-    db.set("linkler", []);
+    db.set("link", []);
   }
 });
-
-//embed hazırlıkları
-
+///by bj and arez 😎
+///by bj and arez 😎
+///by bj and arez 😎
 const help = new discord.MessageEmbed()
-  .setFooter("CodMars Uptime")
+  .setFooter("Uptime")
   .setColor("#40e82a")
-  .setThumbnail("https://i.imgur.com/4M7IWwP.gif")
+  .setThumbnail("")
   .setDescription(
-    `Selam Bot glitch sitelerinin 7/24 açık kalmasını sağlayan bir sistem içerir.Not:Botunuzun 7/24 aktif olması için ilk botunuzun aktif olması lazım. Sistemdeki bağlantılar bakım gerektirmeden 7/24 çalışır. \n\n🕑 Uptime etmek için \`!ekle [show linki]\` yazabilirsin \n🔒 Uptime edilen botlarımı görmek istiyorsun \`!say\` `
+    `➕ Successful Added Your Link  `
   );
 
-
+///by bj and arez 😎
  
 client.on("message", message => {
   if (message.author.bot) return;
   var spl = message.content.split(" ");
-  if (spl[0] == "!ekle") {
+  if (spl[0] == "!link") {
     var link = spl[1];
     fetch(link)
       .then(() => {
@@ -77,30 +79,30 @@ client.on("message", message => {
         )
           return message.channel.send(
             new discord.MessageEmbed()
-              .setFooter("CodMars uptime")
+              .setFooter("uptime")
               .setColor("#40e82a")
-              .setDescription("❌ Projeniz Zaten 7/24 Aktif Tutulmakta ")
+              .setDescription("❌ Your project is already activeverything ")
           );
         message.channel.send(
           new discord.MessageEmbed()
-            .setFooter("codmars uptime")
+            .setFooter("uptime")
             .setColor("#40e82a")
-            .setDescription("✅ Projeniz Başarıyla 7/24 Oldu.")
+            .setDescription("✅ Added Your Project To 24/7 😎 ")
         );
         db.push("linkler", { url: link, owner: message.author.id });
       })
       .catch(e => {
         return message.channel.send(
           new discord.MessageEmbed()
-            .setFooter("CodMars uptime")
+            .setFooter("uptime")
             .setColor("#40e82a")
-            .setDescription("**❌ Lütfen Bir Link Giriniz**")
+            .setDescription("**❌ Please put your snare to host it **")
         );
       });
   }
 });
 
-
+///by bj and arez 😎
 
 client.on("message", message => {
   if (message.author.bot) return;
@@ -109,19 +111,42 @@ client.on("message", message => {
     var link = spl[1];
     message.channel.send(
       new discord.MessageEmbed()
-        .setFooter("CodMars uptime")
+        .setFooter("uptime")
         .setColor("#40e82a")
-        .setDescription(`${db.get("linkler").length} Proje Aktif Tutuluyor!`)
+        .setDescription(`${db.get("linkler").length} Project enabled!`)
     );
   }
 });
-
+///by bj and arez 😎
 client.on("message", message => {
   if (message.author.bot) return;
   var spl = message.content.split(" ");
-  if (spl[0] == "!yardım") {
+  if (spl[0] == "help") {
     var link = spl[1];
     message.channel.send(help);
   }
 });
 
+///by bj and arez 😎
+///by bj and arez 😎
+
+
+
+
+
+///by bj and arez 😎
+///by bj and arez 😎
+///by bj and arez 😎
+
+///by bj and arez 😎
+///by bj and arez 😎
+///by bj and arez 😎
+///by bj and arez 😎
+
+
+///by bj and arez 😎
+///by bj and arez 😎
+///by bj and arez 😎
+///by bj and arez 😎
+
+///by bj and arez 😎
